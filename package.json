@@ -1,0 +1,32 @@
+{
+  "name": "pennyless",
+  "version": "1.0.0",
+  "description": "Crowdsourcing for broke new yorkers",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/moralesl5/Pennyless.git"
+  },
+  "author": "Logan Morales",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/moralesl5/Pennyless/issues"
+  },
+  "homepage": "https://github.com/moralesl5/Pennyless#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.17.2",
+    "connect-flash": "^0.1.1",
+    "dotenv": "^4.0.0",
+    "express": "^4.15.3",
+    "express-session": "^1.15.3",
+    "mustache-express": "^1.2.5",
+    "passport": "^0.3.2",
+    "passport-local": "^1.0.0",
+    "pg-promise": "^6.1.2",
+    "sillyname": "^0.1.0"
+  }
+}
