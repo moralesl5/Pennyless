@@ -18,5 +18,5 @@ app.listen(port, () =>{
 
 app.get('/', (req,res) =>{
 	console.log('Test index rendering');
-	res.send('It\'s grind time');
+	res.render('index');
 })
