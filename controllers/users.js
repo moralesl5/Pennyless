@@ -25,20 +25,12 @@ router.post(
     )
 );
 
-
-
 // ----------------------------------------
 // register new user
 
 router.get('/new', (req, res) => {
     res.render('user/new');
-    // console.log(req.body)
 });
-
-// router.post('/new', (req, res) => {
-//     res.render('user/new');
-//     console.log(req.body)
-// });
 
 // ----------------------------------------
 // user logout
@@ -57,20 +49,35 @@ router.get('/login', (req, res) => {
 
 router.post('/login', passport.authenticate(
     'local-login', {
-        failureRedirect: '/user/login',
-        successRedirect: '/show'
+        failureRedirect: '/users/login',
+        successRedirect: '/users/show'
     }
 ));
 
 // ----------------------------------------
 // user profile
 
-router.get('/user/show', (req,res) =>{
-    res.render('user/show')
-})
+router.get(
+    '/show',
+    // Middleware (that we wrote) ensuring that if the user is not
+    // authenticated, he or she will be redirected to the login screen.
+    auth.restrict,
+    (req, res) => {
+        console.log('in handler for users/show');
+        console.log('req.user:');
+        console.log(req.user);
+        User
+            .findByEmail(req.user.email)
+            .then((user) => {
+                res.render(
+                    'user/show', { user: user }
+                );
+            })
+            .catch(err => console.log('ERROR:', err));
+    }
+);
 
 
 
 module.exports = router;
-
 

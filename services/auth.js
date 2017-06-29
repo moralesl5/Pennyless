@@ -16,7 +16,7 @@ function restrict(req, res, next) {
     if (req.isAuthenticated()) {
         next();
     } else {
-        res.redirect('/user/login');
+        res.redirect('/users/login');
     }
 }
 
@@ -42,13 +42,13 @@ passport.deserializeUser((userObj, done) => {
         });
 });
 
-// see router.post('/', ...) in controllers/users
+// see router.post('/', ...) in controllers/users  !!!SIGNUP STUFF!!!!
 passport.use(
     'local-signup',
     new LocalStrategy({
             // these are the names of the fields for email and password in
             // the login form we'll be serving (see the view)
-            userEmailField: 'user[email]',
+            usernameField: 'user[email]',
             passwordField: 'user[password]',
             passReqToCallback: true
         },
@@ -56,7 +56,6 @@ passport.use(
             User
                 .create(req.body.user)
                 .then((user) => {
-                    console.log('in signup strat', user)
                     return done(null, user);
                 })
                 .catch((err) => {
