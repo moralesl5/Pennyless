@@ -16,7 +16,7 @@ function restrict(req, res, next) {
     if (req.isAuthenticated()) {
         next();
     } else {
-        res.redirect('/users/login');
+        res.redirect('/user/login');
     }
 }
 
@@ -59,7 +59,7 @@ passport.use(
                     return done(null, user);
                 })
                 .catch((err) => {
-                    console.log('ERROR:', err);
+                    console.log('HELLO FROM SIGNUP!!!:', err);
                     return done(null, false);
                 });
         })

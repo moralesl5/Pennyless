@@ -1,19 +1,19 @@
 const bcrypt = require('bcryptjs');
-
+const silly = require('sillyname');
 const db = require('../db/config');
 
 // const User = {};
 
 function create (user) {
   const password = bcrypt.hashSync(user.password, 10);
-
+  const username = silly();
   return db.oneOrNone(`
     INSERT INTO users
-    (email, password_digest)
+    (email, username, password_digest)
     VALUES
-    ($1, $2)
+    ($1, $2, $3)
     RETURNING *;`,
-    [ user.email, password]
+    [ user.email, username, password]
   );
 };
 
@@ -26,13 +26,5 @@ function findByEmail (email) {
   );
 };
 
-function incrementUserCounter(userData) {
-    // get the user counter number
-    const incrementCounterPromise = db.one(
-        "UPDATE users SET counter = counter + 1 WHERE email = ${email} RETURNING counter",
-        userData
-    );
-    return incrementCounterPromise;
-}
 
-module.exports = { create, findByEmail, incrementUserCounter };
+module.exports = { create, findByEmail};
