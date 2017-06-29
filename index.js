@@ -47,6 +47,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
 
 app.use('/user', require('./controllers/users'));
+app.use('/search', auth.restrict, require('./controllers/search'));
 
 
 const username = silly();

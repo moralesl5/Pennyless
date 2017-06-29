@@ -4,19 +4,32 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Sign Up</title>
-  <link rel="stylesheet" href="">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel='shortcut icon' type='image/x-icon' href='./images/logo.png'>
+  <link href="https://fonts.googleapis.com/css?family=Proza+Libre" rel="stylesheet">
 </head>
 <body>
-  <main>
-    <section>
+  <img class = "logo" src="../images/logo.png">
+  <div class="container">
+
+      <h1>Pennyless</h1>
+
       <form action="/user" method="POST">
-        <label for="email">Email</label><br>
-        <input id="email" type="text" name="user[email]" placeholder="john.doe@example.com"><br>
-        <label for="password">Password</label><br>
-        <input id="password" type="password" name="user[password]" placeholder="P4ssw0rd1234"><br>
-        <input type="submit" value="Sign Up">
+        <div class="email">
+          <label for="email">Email</label><br>
+          <input id="email" type="text" name="user[email]" placeholder="john.doe@example.com">
+        </div>
+
+        <div class="password">
+          <label for="password">Password</label><br>
+          <input id="password" type="password" name="user[password]" placeholder="P4ssw0rd1234"><br>
+        </div>
+        
+        <input class = "submitIt" type="submit" value="Sign Up">
       </form>
-    </section>
-  </main>
+
+      <p>Already a user? <a href="/user/login">Sign in!</a></p>
+  </div>
+
 </body>
 </html>
