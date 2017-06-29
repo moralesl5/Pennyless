@@ -25,7 +25,7 @@ app.use(express.static(__dirname + '/public'));
 
 // Important: mount express middleware BEFORE passport middleware
 app.use(session({
-	secret: 'keyboard cat',
+	secret: process.env.SECRET_KEY,
 	resave: true,
 	saveUninitialized: true
 }));
