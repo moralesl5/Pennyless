@@ -4,18 +4,20 @@
 <head>
     <meta charset="UTF-8">
     <title>New place</title>
+    <script src='/js/jquery.js'></script>
+  <script src='/js/script.js'></script>
 </head>
 
 <body>
     <h1>Results page</h1>
-    <form action="#">
+    <form class = "new-place-form">
         <label>Enter Name</label>
-        <input type="text">
+        <input class = 'new-place-name' type="text">
         <label>Enter Address</label>
         <input type="text">
 
         <label>Category</label>
-        <select name="Category" id="">
+        <select class = 'new-place-cat' name="Category" id="">
         	<option>-Select-</option>
             <option value="drinks">Drinks</option>
             <option value="entertainment">Entertainment</option>
@@ -26,7 +28,7 @@
         </select>
 
         <label>Notes</label>
-        <textarea name="" id="" cols="50" rows="20"></textarea>
+        <textarea class = 'new-place-notes' name="" id="" cols="50" rows="20"></textarea>
 
         <button>Add</button>
     </form>
