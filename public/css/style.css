@@ -12,17 +12,10 @@ body {
 }
 
 body {
-    /*background: -moz-linear-gradient(top, rgba(30, 87, 153, 1) 0%, rgba(116, 175, 224, 0.69) 90%, rgba(125, 185, 232, 0.69) 100%);*/
-    /* FF3.6-15 */
-    /*background: -webkit-linear-gradient(top, rgba(30, 87, 153, 1) 0%, rgba(116, 175, 224, 0.69) 90%, rgba(125, 185, 232, 0.69) 100%);*/
-    /* Chrome10-25,Safari5.1-6 */
-    /*background: linear-gradient(to bottom, rgba(30, 87, 153, 1) 0%, rgba(116, 175, 224, 0.69) 90%, rgba(125, 185, 232, 0.69) 100%);*/
-    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    /*filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#1e5799', endColorstr='#b07db9e8', GradientType=0);*/
-    /* IE6-9 */
     background-color: white;
     text-align: center;
 }
+
 
 .container {
     background-color: white;
@@ -40,7 +33,7 @@ body {
 }
 
 .container > a{
-	border-radius: 10%;
+	border-radius: 5%;
 	padding: 10px;
 	text-decoration: none;
 	color: #ff8d00;
@@ -81,8 +74,16 @@ form{
 	box-shadow: none;
 	border: none;
 	margin-top: 50px;
+	font-size: 15px;
 }
 
+a.loginHome{
+	margin-top: 0px;
+}
+
+a.signupHome{
+	margin-top: 0px;
+}
 
 
 @media(max-width: 550px){
