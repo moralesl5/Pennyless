@@ -18,22 +18,28 @@ router.post('/', (req, res) => {
     console.log('Data:', req.body);
     console.log('User:', req.user.id);
     search
-        .create(req.user.id, req.body)
-        .then((place) => {
-            console.log('INSIDE OF POST', place);
-            responseData.data = place;
-            console.log(responseData.data)
-            console.log("Trying to convert in controller")
-            return search.getPlaceId(req.body.address)
-        })
-        .then(latlong => {
+        .getPlaceId(req.body.address)
+        .then((latlong) => {
             console.log("Data from API!!", latlong.data.results[0])
             console.log("Lat: ", latlong.data.results[0].geometry.location.lat);
             console.log("Long:", latlong.data.results[0].geometry.location.lng);
-            responseData.data.lat = latlong.data.results[0].geometry.location.lat;
-            responseData.data.long = latlong.data.results[0].geometry.location.lng;
+            responseData.lat = latlong.data.results[0].geometry.location.lat;
+            responseData.long = latlong.data.results[0].geometry.location.lng;
             console.log("this is the response data", responseData);
+        	return search.create(req.user.id, req.body)
+        })
+        .then(place => {
+            console.log('INSIDE OF POST', place);
+            responseData.id = place.id;
+            responseData.user_id = place.user_id;
+            responseData.name = place.name;
+            responseData.cat = place.cat;
+            responseData.note = place.note;
+            console.log("HERE IS YOUR DATA LOGAN", responseData)
+            console.log("Trying to convert in controller")
+
             res.json(responseData);
+
 
         })
         .catch(err => console.log('ERROR IN CONTROLLER', err))

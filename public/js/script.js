@@ -55,7 +55,6 @@ $(() => {
         })
 
 
-        // console.log("splitting address", addressSplit($('.new-place-address').val()));
     })
 
 
