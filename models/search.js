@@ -13,8 +13,9 @@ const getPlaceId = (address) => {
 
 
 const create = (userId, place) =>{
-	return db.one(`INSERT INTO places(user_id, lat, long, name, cat, note)
-	VALUES ($1,$2,$3,$4,$5,$6) RETURNING *`, [userId, place.lat, place.long, place.name, place.cat, place.notes]);
+	console.log("HEY LOGAN THIS IS THE INFORMATION YOU WANTED FROM YOUR MODEL!!!", userId, place)
+	return db.one(`INSERT INTO places(user_id, lat, long, address, name, cat, note)
+	VALUES ($1,$2,$3,$4,$5,$6,$7) RETURNING *`, [userId, place.lat, place.long, place.address, place.name, place.cat, place.notes]);
 };
 
 

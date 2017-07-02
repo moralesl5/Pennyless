@@ -13,6 +13,7 @@ CREATE TABLE places (
 	user_id INT REFERENCES users(id),
 	lat DECIMAL(12,9),
 	long DECIMAL(12,9),
+	address VARCHAR NOT NULL,
 	name VARCHAR NOT NULL,
 	cat VARCHAR NOT NULL,
 	note VARCHAR NOT NULL

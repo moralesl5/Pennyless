@@ -25,6 +25,8 @@ router.post('/', (req, res) => {
             console.log("Long:", latlong.data.results[0].geometry.location.lng);
             responseData.lat = latlong.data.results[0].geometry.location.lat;
             responseData.long = latlong.data.results[0].geometry.location.lng;
+            req.body.lat = latlong.data.results[0].geometry.location.lat;
+            req.body.long = latlong.data.results[0].geometry.location.lng;
             console.log("this is the response data", responseData);
         	return search.create(req.user.id, req.body)
         })
