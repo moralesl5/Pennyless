@@ -17,10 +17,13 @@ router.get('/new', (req, res) => {
     res.render('ux/new')
 })
 
+//Show
 router.get(`/results`, (req,res) =>{
 	console.log('bitches', resultsObj)
     res.render('ux/results', {resultsObj});
 })
+
+
 
 
 
@@ -40,6 +43,20 @@ router.get(`/:catPlace`, (req,res) =>{
 
 
 
+})
+
+router.get('/results/:id', (req,res) =>{
+	console.log('heres the id',req.params.id)
+	search
+		.findById(req.params.id)
+		.then((one) =>{
+			console.log('ID:', req.params.id)
+			res.render('ux/one', one)
+			console.log(one)
+		})
+		.catch((err) =>{
+			console.log('Error showing one', err);
+		});
 })
 // router.get(`/results`, (req,res) =>{
 // 	res.render('ux/results');

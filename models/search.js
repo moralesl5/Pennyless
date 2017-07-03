@@ -22,7 +22,11 @@ const catSearch = (cat) =>{
 	return db.manyOrNone(`SELECT * FROM places WHERE cat = $1`, [cat]);
 }
 
+const findById = (id) =>{
+	return db.one(`SELECT * FROM places WHERE id = $1`, [id]);
+}
 
 
 
-module.exports = {create, getPlaceId, catSearch};
+
+module.exports = {create, getPlaceId, catSearch, findById};

@@ -3,16 +3,22 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Results</title>
+	<link rel="stylesheet" href="/css/style.css">
+	<link rel='shortcut icon' type='image/x-icon' href='/images/logo.png'>
+	<link href="https://fonts.googleapis.com/css?family=Proza+Libre" rel="stylesheet">
+	<script src='/js/jquery.js'></script>
+  <script src='/js/script.js'></script>
 </head>
 <body>
 	<a href="/search">Go back</a>
 
 	{{#resultsObj.data}}
 	<p>Name: {{name}}</p>
-	<p>Category: {{cat}}</p>
-	<p>Notes: {{note}}</p>
+	<a href="/search/results/{{ id }}">Details</a>
 	<hr>
 	{{/resultsObj.data}}
+
+	
 
 	
 </body>
