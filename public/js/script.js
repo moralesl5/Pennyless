@@ -1,16 +1,6 @@
 $(() => {
     console.log("JS 🏃");
 
-    // const addressSplit = (address) =>{
-    // 	let add = this;
-    // 	for (let i = 0; i < add.length; i++){
-    // 		if (address[i] === " "){
-    // 			address[i] = "+";
-    // 		}
-    // 	}
-
-    // }
-
     // New place post
     $('.new-place-form').on('submit', e => {
         e.preventDefault();
@@ -51,9 +41,40 @@ $(() => {
             error: msg => {
                 console.log('error message in ajax', msg)
             }
-
         })
+    }) // END OF NEW PLACE POST
 
+    // SEARCH
+    $('#search-form').on('submit', e =>{
+    	e.preventDefault();
+
+    	const catPlace = $('#search-place-cat').val();
+    	console.log(catPlace);
+
+    	const namePlace = $('#search-name-place').val(); 
+    	console.log(namePlace);
+
+    	const searchData = {
+    		cat: catPlace,
+    		name: namePlace
+    	}
+    	console.log(searchData)
+
+    	console.log('Field submitted!!!!');
+
+
+    	// AJAX CALL TO DATABASE
+    	$.ajax({
+    		method: 'GET',
+    		url: `/search/${catPlace}`,
+    		success: response =>{
+    			console.log('Response from search:', response)
+    			window.location.replace('/search/results/');
+    		},
+    		error: msg =>{
+    			console.log('Error in search', msg);
+    		}
+    	})
 
     })
 

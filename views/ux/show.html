@@ -3,11 +3,28 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Show place</title>
+    <title>Show places</title>
+    <script src='/js/jquery.js'></script>
+    <script src='/js/script.js'></script>
 </head>
 
 <body>
-    <h1>This is the show page</h1>
+    <h1>Search</h1>
+    <form id="search-form">
+        <label>Search by Category</label>
+        <select id = 'search-place-cat' name="Category" id="">
+            <option>-Select-</option>
+            <option value="drinks">Drinks</option>
+            <option value="entertainment">Entertainment</option>
+            <option value="education">Education</option>
+            <option value="food">Food</option>
+            <option value="shopping">Shopping</option>
+            <option value="misc">Misc</option>
+        </select>
+        <br/>
+
+        <button id="search-button">Search</button>
+    </form>
     <a href="/search/new">Add another</a>
 </body>
 

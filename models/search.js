@@ -18,7 +18,11 @@ const create = (userId, place) =>{
 	VALUES ($1,$2,$3,$4,$5,$6,$7) RETURNING *`, [userId, place.lat, place.long, place.address, place.name, place.cat, place.notes]);
 };
 
+const catSearch = (cat) =>{
+	return db.manyOrNone(`SELECT * FROM places WHERE cat = $1`, [cat]);
+}
 
 
 
-module.exports = {create, getPlaceId};
+
+module.exports = {create, getPlaceId, catSearch};

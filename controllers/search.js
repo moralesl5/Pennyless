@@ -2,15 +2,54 @@ const router = require('express').Router();
 const search = require('../models/search');
 const axios = require('axios')
 
+const resultsObj = {};
+
+
+// Show
 router.get('/', (req, res) => {
+	// console.log("info from search", req.body)
+	
     res.render('ux/show');
 });
-
 
 // NEW PLACE
 router.get('/new', (req, res) => {
     res.render('ux/new')
 })
+
+router.get(`/results`, (req,res) =>{
+	console.log('bitches', resultsObj)
+    res.render('ux/results', {resultsObj});
+})
+
+
+
+
+router.get(`/:catPlace`, (req,res) =>{
+	console.log('info from search', req.params.catPlace)
+
+	search
+		.catSearch(req.params.catPlace)
+		.then((data) =>{
+			resultsObj.data = data;
+			console.log("HEY LOGAN HERES YOUR DATA", resultsObj.data);
+			res.render('ux/results', {resultsObj});
+		})
+
+	
+
+
+
+})
+// router.get(`/results`, (req,res) =>{
+// 	res.render('ux/results');
+// })
+
+
+
+
+
+
 
 
 router.post('/', (req, res) => {
