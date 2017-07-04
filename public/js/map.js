@@ -4,8 +4,12 @@ $(() => {
 
 	const lat = parseFloat($('.lat').attr('data_id'));
 	const long = parseFloat($('.long').attr('data_id'));
+	const address = $('.address').attr('address').replace(/[+]/gi, " ");
     console.log(lat);
     console.log(long);
+    console.log(address);
+
+    $('.address').text(address);
 
     function initMap() {
 
@@ -18,8 +22,8 @@ $(() => {
             lng: long
         };
         var map = new google.maps.Map(document.getElementById('map'), {
-            zoom: 15,
-            center: center
+            zoom: 17,
+            center: marker1
         });
         var marker = new google.maps.Marker({
             position: marker1,

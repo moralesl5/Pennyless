@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Edit page</title>
+    <script src='/js/jquery.js'></script>
+    <script src='/js/script.js'></script>
+</head>
+
+<body>
+    <form class="edit-place-form" placeId = {{id}}>
+        <label>Enter Name</label>
+        <input class='edit-place-name' type="text">
+        <label>Category</label>
+        <select class='edit-place-cat' name="Category" id="">
+            <option>-Select-</option>
+            <option value="drinks">Drinks</option>
+            <option value="entertainment">Entertainment</option>
+            <option value="education">Education</option>
+            <option value="food">Food</option>
+            <option value="shopping">Shopping</option>
+            <option value="misc">Misc</option>
+        </select>
+        <label>Notes</label>
+        <textarea class='edit-place-notes' name="" id="" cols="50" rows="20"></textarea>
+        <button>Add</button>
+    </form>
+</body>
+
+</html>

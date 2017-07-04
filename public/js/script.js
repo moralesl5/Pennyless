@@ -80,6 +80,38 @@ $(() => {
 
     })
 
+    // EDIT
+    $('.edit-place-form').on('submit', (e) =>{
+    	e.preventDefault();
+    	console.log('editing');
+
+    	const newName = $('.edit-place-name').val(),
+    		  newCat = $('.edit-place-cat').val(),
+    		  newNote = $('.edit-place-notes').val(),
+    		  id = $('.edit-place-form').attr('placeId');
+
+    	const editPlaceData = {
+    		name: newName,
+    		cat: newCat,
+    		note: newNote,
+    		id: id
+    	};
+    	console.log(editPlaceData);
+
+    	$.ajax({
+    		method: 'PUT',
+    		url: `/search/results/${editPlaceData.id}/edit`,
+    		data: editPlaceData,
+    		success: updatedPlace =>{
+    			window.location.replace('/search')
+    		},
+    		error: msg =>{
+    			console.log('Error in editing from SCRIPT', msg);
+    		}
+
+    	})
+    })
+
 
 
 }); // END OF jQUERY
