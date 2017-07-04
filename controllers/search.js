@@ -130,8 +130,16 @@ router.put('/results/:id/edit', (req, res) => {
         .catch((error) => {
             console.log('Error in updating from controller', error);
         });
-
-
 })
+
+router.delete('/results/:id', (req, res) =>{
+	search
+		.destroy(req.params.id, req.user.id)
+		.then((place) =>{
+			res.send('deleted')
+		})
+		.catch(err => console.log("Error deleting from controller", err));
+})
+
 
 module.exports = router;

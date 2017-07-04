@@ -8,8 +8,9 @@
     <link rel='shortcut icon' type='image/x-icon' href='/images/logo.png'>
     <link href="https://fonts.googleapis.com/css?family=Proza+Libre" rel="stylesheet">
     <script src='/js/jquery.js'></script>
+    <script src = '/js/script.js'></script>
     <script src='/js/map.js'></script>
-    <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyBhht7QeEdXeZOmmc0XQObScp6biOaQZCI&sensor=false">
+    <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyBhht7QeEdXeZOmmc0XQObScp6biOaQZCI">
     </script>
 </head>
 
@@ -23,6 +24,7 @@
     >
     <p class = 'address' address = {{address}}></p>
     <a href="/search/results/{{id}}/edit">Edit</a>
+    <button class = "delete-place"   placeId = {{id}}>Delete</button>
     <div id="map"></div>
 </body>
 
