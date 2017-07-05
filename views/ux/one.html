@@ -4,28 +4,36 @@
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/ux.css">
     <link rel='shortcut icon' type='image/x-icon' href='/images/logo.png'>
     <link href="https://fonts.googleapis.com/css?family=Proza+Libre" rel="stylesheet">
     <script src='/js/jquery.js'></script>
-    <script src = '/js/script.js'></script>
+    <script src='/js/script.js'></script>
     <script src='/js/map.js'></script>
     <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyBhht7QeEdXeZOmmc0XQObScp6biOaQZCI">
     </script>
 </head>
 
 <body>
-    <h1>Showing one item</h1>
-    <p>Name: {{name}}</p>
-    <p>Category: {{cat}}</p>
-    <p>Notes: {{note}}</p>
-    <p class='lat' data_id={{lat}} hidden>{{lat}}</p>
-    <p class='long' data_id={{long}} hidden>{{long}}</p
-    >
-    <p class = 'address' address = {{address}}></p>
-    <a href="/search/results/{{id}}/edit">Edit</a>
-    <button class = "delete-place"   placeId = {{id}}>Delete</button>
-    <div id="map"></div>
+    <nav>
+        <a href="/user/show">Home</a>
+        <a href="/search">Search</a>
+        <a href="/search/new">Add place</a>
+        <a href="/user/logout" class="logout">Logout</a>
+    </nav>
+    <div class="containerTwo">
+        <p>Name: {{name}}</p>
+        <p>Category: {{cat}}</p>
+        <p>{{note}}</p>
+        <p class='lat' data_id={{lat}} hidden>{{lat}}</p>
+        <p class='long' data_id={{long}} hidden>{{long}}</p>
+        <p class='address' address={{address}}></p>
+        <div class="seperate">
+            <a href="/search/results/{{id}}/edit" class = "edit">Edit</a>
+            <button placeId={{id}} class = "delete">Delete</button>
+        </div>
+        <div id="map"></div>
+    </div>
 </body>
 
 </html>

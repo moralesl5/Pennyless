@@ -52,10 +52,12 @@ form{
 	/*display: flex;*/
 }
 
+
 .password{
-	width: 300px;
+	width: 268px;
 	display: flex;
 	justify-content: space-between;
+	margin: 50px 0;
 
 }
 
@@ -64,7 +66,26 @@ form{
 	display: flex;
 	justify-content: space-between;
 	margin: 50px 0;
+	/*margin-top: -100px;*/
 }
+
+.password2{
+	width: 268px;
+	display: flex;
+	justify-content: space-between;
+	margin: 50px 0;
+
+}
+
+.email2{
+	width: 245px;
+	display: flex;
+	justify-content: space-between;
+	margin: 50px 0;
+	/*margin-top: -100px;*/
+}
+
+
 
 .submitIt{
 	height: 50px;
@@ -73,16 +94,31 @@ form{
 	color: white;
 	box-shadow: none;
 	border: none;
-	margin-top: 50px;
+	margin-top: 20px;
+	font-size: 15px;
+}
+.submitIt2{
+	height: 50px;
+	width: 100px;
+	background-color: #ff8d00;
+	color: white;
+	box-shadow: none;
+	border: none;
+	margin-top: 20px;
 	font-size: 15px;
 }
 
 a.loginHome{
 	margin-top: 0px;
+	margin-bottom: 0px;
 }
 
 a.signupHome{
 	margin-top: 0px;
+}
+
+#password{
+	margin-left: 0px;
 }
 
 #map {

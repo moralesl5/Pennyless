@@ -1,13 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>Nice</title>
-</head>
-<body>
-	<h1>Congrats {{user.username}}! you have signed and your information has been recorded, forever.</h1>
 
-	<a href="/search">See places</a>
-	<a href="/search/new">New place</a>
+<head>
+    <meta charset="UTF-8">
+    <title>Nice</title>
+    <link rel="stylesheet" href="/css/ux.css">
+    <link rel='shortcut icon' type='image/x-icon' href='../images/logo.png'>
+    <link href="https://fonts.googleapis.com/css?family=Proza+Libre" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Welcome, {{user.username}}!</h1>
+        <div class="buttonNav">
+            <a href="/search" class='search-button2'>Search</a>
+            <a href="/search/new" class='search-button2'>New place</a>
+        </div>
+        <a href="/user/logout" class='search-button3'>Logout</a>
+    </div>
 </body>
+
 </html>

@@ -13,23 +13,19 @@
 <body>
     <img class="logo" src="../images/logo.png">
     <div class="container">
-
         <h1>Pennyless</h1>
-
         <form action="/user/login" class="user-form" method="POST">
-  
-            <div class="email">
-              <label for="email">Email</label>
-              <input id="email" type="text" name="user[email]" placeholder="john.doe@example.com">
+            <div class="info">
+                <div class="email">
+                    <label for="email">Email</label>
+                    <input id="email" type="text" name="user[email]" placeholder="john.doe@example.com">
+                </div>
+                <div class="password">
+                    <label for="password">Password</label>
+                    <input id="password" type="password" name="user[password]" placeholder="Password">
+                </div>
             </div>
-
-
-            <div class="password">
-              <label for="password">Password</label>
-              <input id="password" type="password" name="user[password]" placeholder="P4ssw0rd1234">
-            </div>
-
-            <button>Log In</button>
+            <button class = "submitIt2">Log In</button>
             <p>Not a user? <a href="/user/new">Sign Up!</a></p>
         </form>
     </div>

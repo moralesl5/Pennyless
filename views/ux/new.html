@@ -4,34 +4,41 @@
 <head>
     <meta charset="UTF-8">
     <title>New place</title>
+    <link rel="stylesheet" href="/css/ux.css">
+    <link rel='shortcut icon' type='image/x-icon' href='/images/logo.png'>
+    <link href="https://fonts.googleapis.com/css?family=Proza+Libre" rel="stylesheet">
     <script src='/js/jquery.js'></script>
-  <script src='/js/script.js'></script>
+    <script src='/js/script.js'></script>
 </head>
 
 <body>
-    <h1>Results page</h1>
-    <form class = "new-place-form">
-        <label>Enter Name</label>
-        <input class = 'new-place-name' type="text">
-        <label>Enter Address</label>
-        <input class = 'new-place-address' type="text">
-
-        <label>Category</label>
-        <select class = 'new-place-cat' name="Category" id="">
-        	<option>-Select-</option>
-            <option value="drinks">Drinks</option>
-            <option value="entertainment">Entertainment</option>
-            <option value="education">Education</option>
-            <option value="food">Food</option>
-            <option value="shopping">Shopping</option>
-            <option value="misc">Misc</option>
-        </select>
-
-        <label>Notes</label>
-        <textarea class = 'new-place-notes' name="" id="" cols="50" rows="20"></textarea>
-
-        <button>Add</button>
-    </form>
+    <nav>
+        <a href="/user/show">Home</a>
+        <a href="/search">Search</a>
+        <a href="/search/new">Add place</a>
+        <a href="/user/logout" class="logout">Logout</a>
+    </nav>
+    <div class="containerTwo">
+        <form class="new-place-form">
+            <label>Enter Name</label>
+            <input class='new-place-name' type="text">
+            <label>Enter Address</label>
+            <input class='new-place-address' type="text">
+            <label>Category</label>
+            <select class='new-place-cat' name="Category" id="">
+                <option>-Select-</option>
+                <option value="drinks">Drinks</option>
+                <option value="entertainment">Entertainment</option>
+                <option value="education">Education</option>
+                <option value="food">Food</option>
+                <option value="shopping">Shopping</option>
+                <option value="misc">Misc</option>
+            </select>
+            <label>Notes</label>
+            <textarea class='new-place-notes' name="" id="" cols="50" rows="20"></textarea>
+            <button>Add</button>
+        </form>
+    </div>
 </body>
 
 </html>

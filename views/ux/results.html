@@ -1,25 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-	<meta charset="UTF-8">
-	<title>Results</title>
-	<link rel="stylesheet" href="/css/style.css">
-	<link rel='shortcut icon' type='image/x-icon' href='/images/logo.png'>
-	<link href="https://fonts.googleapis.com/css?family=Proza+Libre" rel="stylesheet">
-	<script src='/js/jquery.js'></script>
-  <script src='/js/script.js'></script>
+    <meta charset="UTF-8">
+    <title>Results</title>
+    <link rel="stylesheet" href="/css/ux.css">
+    <link rel='shortcut icon' type='image/x-icon' href='/images/logo.png'>
+    <link href="https://fonts.googleapis.com/css?family=Proza+Libre" rel="stylesheet">
+    <script src='/js/jquery.js'></script>
+    <script src='/js/script.js'></script>
 </head>
+
 <body>
-	<a href="/search">Go back</a>
-
-	{{#resultsObj.data}}
-	<p>Name: {{name}}</p>
-	<a href="/search/results/{{ id }}">Details</a>
-	<hr>
-	{{/resultsObj.data}}
-
-	
-
-	
+    <nav>
+        <a href="/user/show">Home</a>
+        <a href="/search">Search</a>
+        <a href="/search/new">Add place</a>
+        <a href="/user/logout" class="logout">Logout</a>
+    </nav>
+    <div class="container">
+        {{#resultsObj.data}}
+        <p><b>Name: {{name}}</b></p>
+        <a class = 'details' href="/search/results/{{ id }}">Details</a>
+        <hr class="line"> {{/resultsObj.data}}
+    </div>
 </body>
+
 </html>

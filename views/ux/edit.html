@@ -4,28 +4,39 @@
 <head>
     <meta charset="UTF-8">
     <title>Edit page</title>
+    <link rel="stylesheet" href="/css/ux.css">
+    <link rel='shortcut icon' type='image/x-icon' href='/images/logo.png'>
+    <link href="https://fonts.googleapis.com/css?family=Proza+Libre" rel="stylesheet">
     <script src='/js/jquery.js'></script>
     <script src='/js/script.js'></script>
 </head>
 
 <body>
-    <form class="edit-place-form" placeId = {{id}}>
-        <label>Enter Name</label>
-        <input class='edit-place-name' type="text">
-        <label>Category</label>
-        <select class='edit-place-cat' name="Category" id="">
-            <option>-Select-</option>
-            <option value="drinks">Drinks</option>
-            <option value="entertainment">Entertainment</option>
-            <option value="education">Education</option>
-            <option value="food">Food</option>
-            <option value="shopping">Shopping</option>
-            <option value="misc">Misc</option>
-        </select>
-        <label>Notes</label>
-        <textarea class='edit-place-notes' name="" id="" cols="50" rows="20"></textarea>
-        <button>Add</button>
-    </form>
+    <nav>
+        <a href="/user/show">Home</a>
+        <a href="/search">Search</a>
+        <a href="/search/new">Add place</a>
+        <a href="/user/logout" class="logout">Logout</a>
+    </nav>
+    <div class="containerTwo">
+        <form class="edit-place-form" placeId={ {id}}>
+            <label>Enter Name</label>
+            <input class='edit-place-name' type="text">
+            <label>Category</label>
+            <select class='edit-place-cat' name="Category" id="">
+                <option>-Select-</option>
+                <option value="drinks">Drinks</option>
+                <option value="entertainment">Entertainment</option>
+                <option value="education">Education</option>
+                <option value="food">Food</option>
+                <option value="shopping">Shopping</option>
+                <option value="misc">Misc</option>
+            </select>
+            <label>Notes</label>
+            <textarea class='edit-place-notes' name="" id="" cols="50" rows="20"></textarea>
+            <button>Submit</button>
+        </form>
+    </div>
 </body>
 
 </html>

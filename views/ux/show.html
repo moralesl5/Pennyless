@@ -6,9 +6,20 @@
     <title>Show places</title>
     <script src='/js/jquery.js'></script>
     <script src='/js/script.js'></script>
+    <link rel="stylesheet" href="/css/ux.css">
+    <link rel='shortcut icon' type='image/x-icon' href='./images/logo.png'>
+    <link href="https://fonts.googleapis.com/css?family=Proza+Libre" rel="stylesheet">
 </head>
 
 <body>
+    <nav>
+        <a href="/user/show">Home</a>
+        <a href="/search">Search</a>
+        <a href="/search/new">Add place</a>
+        <a href="/user/logout" class="logout">Logout</a>
+    </nav>
+    
+	<div class="container">
     <h1>Search</h1>
     <form id="search-form">
         <label>Search by Category</label>
@@ -23,9 +34,10 @@
         </select>
         <br/>
 
-        <button id="search-button">Search</button>
+        <button id="search-button" class = "search-button">Search</button>
     </form>
-    <a href="/search/new">Add another</a>
+    <a href="/search/new" class = 'addPlace'>Add a place</a>
+    </div>
 </body>
 
 </html>
