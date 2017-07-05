@@ -1,4 +1,4 @@
-# Project 2 - Pennyless (Proposal)
+# Pennyless
 
 ## User Stories
 "As a New Yorker, I've always found it difficult to find places to eat, to go or to shop when I am on a budget. Thanks to Pennyless, I am able to view shopping options based on the users around me" - Annonymous
@@ -17,20 +17,21 @@
 ### Record new location
 ![Imgur](https://i.imgur.com/BJ0HVaX.png)
 
-## Proposed APIs
+## APIs I Used
 - Google Places https://developers.google.com/places/
 - Google Maps https://developers.google.com/maps/
-- Google Geocoding https://developers.google.com/maps/documentation/geocoding/start
-- Maybe more? 
+
 
 ## NPM
 SillyName: https://www.npmjs.com/package/sillyname
 
-## Foreseen Challenges
-- Integrating APIs with database
-- User authentication
-- Dynamic search
-- Categorizing entries
+## Reach Goals
+- Google Maps displays all results on a single map
+- Multiple users
+- Edit user
+- Username check system
+- More styling
+
 
 ## Technology
 - HTML
@@ -44,3 +45,5 @@ SillyName: https://www.npmjs.com/package/sillyname
 
 ## Repo
 [Link to my repo](https://github.com/moralesl5/Pennyless)
+
+[Link to Demo](https://alluring-arches-18592.herokuapp.com/)
