@@ -112,7 +112,7 @@ $(() => {
 
     // DELETE
 
-    $('.delete-place').on('click', e => {
+    $('.delete').on('click', e => {
         console.log('deleting!');
         deletePlace($(e.target).attr('placeId'));
     });
