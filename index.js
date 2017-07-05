@@ -6,7 +6,7 @@ const express = require('express'),
       session = require('express-session'),
       // passport = require('passport'),
       mustacheExpress = require('mustache-express'),
-      port = process.env.PORT || 3000, // Will run on 8080 as delcared and enforced by your holiness: .env
+      PORT = process.env.PORT || 3000, // Will run on 8080 as delcared and enforced by your holiness: .env
       app = express(),
       silly = require('sillyname'),
       user = require('./controllers/users'),
@@ -53,8 +53,8 @@ app.use('/search', auth.restrict, require('./controllers/search'));
 const username = silly();
 console.log(username);
 
-app.listen(port, () =>{
-	console.log(`The world runs on ${port}`);
+app.listen(PORT, () =>{
+	console.log(`The world runs on ${PORT}`);
 })
 
 app.get('/', (req,res) =>{
